@@ -18,8 +18,4 @@
     <string name="checkinfo">请完善您的信息！</string>
     <string name="auto_login_failed">自动登录失败</string>
     <string name="auto_login_third_failed">第三方自动登录失败:</string>
-    <string name="select_pic_failed">选择图片失败！</string>
-    <string name="upload_pic_success">加载图片成功！</string>
-    <string name="upload_pic_failure">加载图片失败！</string>
-
 </resources>

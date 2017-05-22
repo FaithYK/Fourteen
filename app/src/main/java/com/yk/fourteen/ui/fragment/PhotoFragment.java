@@ -80,7 +80,7 @@ public class PhotoFragment extends Fragment {
         OkHttpUtils.get()
                 .url(ServerConfig.YIYUAN_PHOTO_URL)
                 .addParams("showapi_appid", Common.YIYUAN_APPID)
-                .addParams("showapi_sign", Common.YIYUAN_Joke_KEY)
+                .addParams("showapi_sign", Common.YIYUAN_KEY)
                 .addParams("type", String.valueOf(4002))
                 .addParams("page", String.valueOf(page))
                 .build()

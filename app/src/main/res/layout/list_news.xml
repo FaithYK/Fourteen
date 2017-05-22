@@ -15,5 +15,5 @@
         android:layout_alignParentBottom="true"
         android:padding="8.0dp"
         android:textColor="@color/white"
-        android:background="#BFBFBF"/>
+        android:background="@color/skyblue"/>
 </FrameLayout>

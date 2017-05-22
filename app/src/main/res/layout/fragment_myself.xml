@@ -9,25 +9,13 @@
     <RelativeLayout
         android:id="@+id/top_relative"
         android:layout_width="fill_parent"
-        android:layout_height="50.0dip"
-        android:background="@color/blue">
+        android:layout_height="50.0dip">
 
-        <TextView
-            android:id="@+id/titleText"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerInParent="true"
-            android:padding="10.0dip"
-            android:singleLine="true"
-            android:text="我"
-            android:textColor="@color/white"
-            android:textSize="15dp" />
     </RelativeLayout>
 
     <ScrollView
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/top_relative"
         android:fadingEdge="none">
 
         <LinearLayout
@@ -49,16 +37,9 @@
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content">
 
-                    <TableRow
-                        android:id="@+id/more_page_row0"
-                        android:layout_width="fill_parent"
-                        android:layout_marginLeft="2.0dip"
-                        android:layout_marginRight="2.0dip"
-                        android:background="@mipmap/background"
-                        android:paddingBottom="8.0dip"
-                        android:paddingTop="8.0dip">
 
                         <com.makeramen.roundedimageview.RoundedImageView
+                            android:id="@+id/riv_my_photo"
                             android:layout_width="60dp"
                             android:layout_height="60dp"
                             android:layout_marginBottom="8dp"
@@ -68,36 +49,24 @@
                             app:riv_border_width="2dp"
                             app:riv_corner_radius="30dip"
                             app:riv_oval="true" />
-
                         <TextView
+                            android:id="@+id/tv_my_name"
+                            android:gravity="center"
+                            android:layout_height="wrap_content"
                             android:layout_width="wrap_content"
-                            android:layout_height="fill_parent"
-                            android:drawableLeft="@color/white"
-                            android:drawablePadding="10.0dip"
-                            android:includeFontPadding="false"
-                            android:paddingLeft="17.0dip"
-                            android:paddingTop="15dp"
-                            android:text="1234"
-                            android:textColor="#ff333333"
-                            android:textSize="16.0sp" />
+                            android:text=""/>
 
                         <Button
                             android:id="@+id/btn_my_login"
-                            android:layout_width="wrap_content"
+                            android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layout_marginLeft="60dp"
                             android:background="@color/blue"
                             android:text="登录"
+                            android:gravity="center"
                             android:textColor="@color/white"
                             android:textSize="16sp" />
 
-                        <ImageView
-                            android:layout_width="30dp"
-                            android:layout_height="30dp"
-                            android:layout_gravity="center"
-                            android:layout_marginLeft="28dp"
-                            android:src="@mipmap/more" />
-                    </TableRow>
+
 
                     <TableRow
                         android:layout_width="match_parent"
@@ -106,6 +75,7 @@
                         android:padding="16dp">
 
                         <TextView
+                            android:id="@+id/tv_my_collection"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
@@ -115,15 +85,7 @@
                             android:textSize="16sp" />
 
                         <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:background="@mipmap/boederline"
-                            android:gravity="center"
-                            android:text="历史"
-                            android:textSize="16sp" />
-
-                        <TextView
+                            android:id="@+id/tv_my_share"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
@@ -167,52 +129,25 @@
                         android:paddingTop="16.0dip">
 
                         <TextView
+                            android:id="@+id/tv_my_moon"
                             android:layout_width="wrap_content"
                             android:layout_height="fill_parent"
-                            android:drawableLeft="@mipmap/manage"
+                            android:drawableLeft="@mipmap/moon"
                             android:drawablePadding="10.0dip"
                             android:gravity="center_vertical"
                             android:includeFontPadding="false"
                             android:paddingLeft="17.0dip"
-                            android:text="账号管理"
+                            android:text="夜间模式"
                             android:textColor="#ff333333"
                             android:textSize="16.0sp" />
 
-                        <ImageView
+                        <CheckBox
                             android:layout_width="30dp"
                             android:layout_height="30dp"
                             android:layout_gravity="center"
                             android:layout_marginRight="20dp"
-                            android:src="@mipmap/more" />
-                    </TableRow>
-
-                    <TableRow
-                        android:id="@+id/more_page_row2"
-                        android:layout_width="fill_parent"
-                        android:layout_marginLeft="2.0dip"
-                        android:layout_marginRight="2.0dip"
-                        android:background="@mipmap/background"
-                        android:paddingBottom="16.0dip"
-                        android:paddingTop="16.0dip">
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="fill_parent"
-                            android:drawableLeft="@mipmap/hobby"
-                            android:drawablePadding="10.0dip"
-                            android:gravity="center_vertical"
-                            android:includeFontPadding="false"
-                            android:paddingLeft="17.0dip"
-                            android:text="个人爱好"
-                            android:textColor="#ff333333"
-                            android:textSize="16.0sp" />
-
-                        <ImageView
-                            android:layout_width="30dp"
-                            android:layout_height="30dp"
-                            android:layout_gravity="center"
-                            android:layout_marginRight="20dp"
-                            android:src="@mipmap/more" />
+                            android:shadowColor="@color/cornflowerblue"
+                            android:src="@drawable/selector" />
                     </TableRow>
 
                     <TableRow
@@ -225,7 +160,7 @@
                         android:paddingTop="16.0dip">
 
                         <TextView
-                            android:id="@+id/textView"
+                            android:id="@+id/tv_my_ecord"
                             android:layout_width="wrap_content"
                             android:layout_height="fill_parent"
                             android:drawableLeft="@mipmap/liulan"
@@ -248,6 +183,7 @@
             </LinearLayout>
 
             <TextView
+                android:id="@+id/tv_my_client"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="10.0dip"
@@ -280,6 +216,7 @@
                         android:paddingTop="16.0dip">
 
                         <TextView
+                            android:id="@+id/tv_my_install"
                             android:layout_width="wrap_content"
                             android:layout_height="fill_parent"
                             android:drawableLeft="@mipmap/set"
@@ -309,6 +246,7 @@
                         android:paddingTop="16.0dip">
 
                         <TextView
+                            android:id="@+id/tv_my_feedBack"
                             android:layout_width="wrap_content"
                             android:layout_height="fill_parent"
                             android:drawableLeft="@mipmap/idea"
@@ -338,6 +276,7 @@
                         android:paddingTop="16.0dip">
 
                         <TextView
+                            android:id="@+id/tv_my_update"
                             android:layout_width="wrap_content"
                             android:layout_height="fill_parent"
                             android:drawableLeft="@mipmap/chakan"
@@ -367,6 +306,7 @@
                         android:paddingTop="16.0dip">
 
                         <TextView
+                            android:id="@+id/tv_my_about"
                             android:layout_width="wrap_content"
                             android:layout_height="fill_parent"
                             android:drawableLeft="@mipmap/about"

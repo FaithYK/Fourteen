@@ -21,7 +21,6 @@ import butterknife.ButterKnife;
 public class JokeAdapter extends BaseAdapter {
     public List<Joke.ShowapiResBodyBean.ContentlistBean> data;
     public ViewHolder viewHolder;
-
     public JokeAdapter(List<Joke.ShowapiResBodyBean.ContentlistBean> data) {
         this.data = data;
     }
@@ -51,6 +50,7 @@ public class JokeAdapter extends BaseAdapter {
             viewHolder = (ViewHolder) convertView.getTag();
         }
         viewHolder.tvCardViewJoke.setText(data.get(position).getText());
+
         return convertView;
     }
 
@@ -72,4 +72,5 @@ public class JokeAdapter extends BaseAdapter {
         data.addAll(newData);
         notifyDataSetChanged();
     }
+
 }

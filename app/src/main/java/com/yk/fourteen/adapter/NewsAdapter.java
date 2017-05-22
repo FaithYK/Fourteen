@@ -6,7 +6,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
-import android.widget.ListView;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
@@ -22,8 +21,21 @@ import java.util.List;
 public class NewsAdapter extends BaseAdapter {
     public List<News> data;
     public ViewHolder viewHolder;
+    public Context context;
 
-    public NewsAdapter(Context context, int item_news, ListView lv_news) {
+
+    public NewsAdapter(List<News> data, ViewHolder viewHolder, Context context) {
+        this.data = data;
+        this.viewHolder = viewHolder;
+        this.context = context;
+    }
+
+    public Context getContext() {
+        return context;
+    }
+
+    public void setContext(Context context) {
+        this.context = context;
     }
 
     public NewsAdapter(List<News> data) {
@@ -46,12 +58,12 @@ public class NewsAdapter extends BaseAdapter {
     }
 
     @Override
-    public View getView(int i, View view, ViewGroup viewGroup) {
-        if(view == null){
-            view = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.list_news,null);
+    public View getView(final int i, View view, ViewGroup viewGroup) {
+        if (view == null) {
+            view = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.list_news, null);
             viewHolder = new ViewHolder(view);
             view.setTag(viewHolder);
-        }else{
+        } else {
             viewHolder = (ViewHolder) view.getTag();
         }
 
@@ -66,20 +78,24 @@ public class NewsAdapter extends BaseAdapter {
         viewHolder.tv_title.setText(data.get(i).getTitle());
         return view;
     }
-    class ViewHolder{
-            ImageView iv_photo;
-            TextView tv_title;
-            public ViewHolder(View view){
-                iv_photo = (ImageView) view.findViewById(R.id.iv_photo);
-                tv_title = (TextView) view.findViewById(R.id.tv_title);
-            }
+
+    class ViewHolder {
+        ImageView iv_photo;
+        TextView tv_title;
+
+        public ViewHolder(View view) {
+            iv_photo = (ImageView) view.findViewById(R.id.iv_photo);
+            tv_title = (TextView) view.findViewById(R.id.tv_title);
+        }
     }
-    public void setNewData(List<News> list){
+
+    public void setNewData(List<News> list) {
         data.clear();
         data.addAll(list);
         notifyDataSetChanged();
     }
-    public void setMoreData(List<News> list){
+
+    public void setMoreData(List<News> list) {
         data.addAll(list);
         notifyDataSetChanged();
     }

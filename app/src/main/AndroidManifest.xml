@@ -13,19 +13,26 @@
     <!-- 蓝牙分享所需的权限 -->
     <uses-permission android:name="android.permission.BLUETOOTH" />
     <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
-
+    <uses-permission android:name="android.permission.MANAGE_ACCOUNTS" />
+    <uses-permission android:name="android.permission.GET_ACCOUNTS" />
+    <!-- 从sdcard中读取数据的权限 -->
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <!-- 往sdcard中写入数据的权限 -->
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
     <application
+        android:name=".utils.BaseApplication"
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@mipmap/photo_tittle"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity"></activity>
+        <activity android:name=".MainActivity" />
         <activity android:name=".ui.activity.RegisterActivity" />
         <activity
             android:name=".ui.activity.NavigationActivity"
-            android:label="@string/title_activity_navigation">
+            android:label="Fourteen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -69,7 +76,8 @@
             android:exported="true"
             android:screenOrientation="portrait"
             android:theme="@android:style/Theme.Translucent.NoTitleBar" />
-        <activity android:name=".ui.activity.NewsDetailActivity"></activity>
+        <activity android:name=".ui.activity.NewsDetailActivity" />
+        <activity android:name=".ui.activity.PerfectInfoActivity"></activity>
     </application>
 
 </manifest>

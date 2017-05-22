@@ -17,12 +17,27 @@ import okhttp3.OkHttpClient;
  */
 
 public class BaseApplication extends Application {
+    private static BaseApplication instance = null;
     @Override
     public void onCreate() {
         super.onCreate();
-       ShareSDK.initSDK(this);
-        //Bmob ID
+        this.instance = (BaseApplication) getApplicationContext();
+        initShareSDK();
+        initData();
+        initBmobSDK();
+    }
+
+    private void initBmobSDK() {
         Bmob.initialize(this, Common.BMOB_ID);
+    }
+
+    private void initData() {
+        //TODO 初始化数据
+        LoginUtils.checkLogin(false);
+    }
+
+    private void initShareSDK() {
+        ShareSDK.initSDK(this);
         OkHttpClient okHttpClient = new OkHttpClient.Builder()
                 .addInterceptor(new LoggerInterceptor("TAG"))
                 .connectTimeout(10000L, TimeUnit.MILLISECONDS)
@@ -30,5 +45,9 @@ public class BaseApplication extends Application {
                 //其他配置
                 .build();
         OkHttpUtils.initClient(okHttpClient);
+    }
+
+    public static synchronized BaseApplication getInstance(){
+        return instance;
     }
 }
